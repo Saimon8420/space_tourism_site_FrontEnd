@@ -1,0 +1,72 @@
+:root {
+  --primary-Color: #0B0D17;
+  --secondary-Color: rgb(208, 214, 249);
+  --third-Color: #FFFFFF;
+
+  --font-family1: 'Bellefair',
+    serif;
+  --font-family2: 'Barlow Condensed',
+    sans-serif;
+
+  /* --heading1-font-size: 150px;
+  --heading1-line-height: normal;
+
+  --heading2-font-size: 100px;
+  --heading2-line-height: normal;
+
+  --heading3-font-size: 56px;
+  --heading3-line-height: normal;
+
+  --heading4-font-size: 32px;
+  --heading4-line-height: normal;
+
+  --heading5-font-size: 28px;
+  --heading5-line-height: normal;
+  --heading5-letter-spacing: 4.725px;
+
+  --subHeading1-font-size: 28px;
+  --subHeading1-line-height: normal;
+
+  --subHeading2-font-size: 14px;
+  --subHeading2-line-height: normal;
+  --subHeading2-letter-spacing: 2.362px;
+
+  --nav-font-size: 16px;
+  --nav-letter-spacing: 2.7px; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-Color);
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width:576px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:577px) and (max-width:978px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}

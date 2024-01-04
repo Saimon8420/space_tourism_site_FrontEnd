@@ -1,0 +1,132 @@
+.app {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 9999;
+    /* margin: 20px;
+    margin: auto; */
+    overflow-x: hidden;
+}
+
+.home-nav {
+    margin: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    z-index: 999;
+    /* background-color: red; */
+    overflow-x: hidden;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: 1;
+}
+
+/* .nav-logo img {
+    width: 100%;
+} */
+
+.v-bar {
+    background-color: rgba(255, 255, 255, 1);
+    height: 1px;
+    width: calc(100% - 30px);
+    margin-left: 20px;
+    margin-right: -10px;
+    z-index: 99999;
+    opacity: 0.2515;
+    /* position: absolute; */
+    flex-shrink: 1;
+}
+
+.nav-link {
+    display: flex;
+    flex-shrink: 0;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.774227142333984px);
+    padding: 20px 15px;
+}
+
+.nav-link>p>a {
+    color: #FFF;
+    font-family: Barlow Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.7px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.mobile-nav-none {
+    display: none;
+}
+
+.mobile-nav-close {
+    display: none;
+}
+
+@media only screen and (max-width:576px) {
+
+    .v-bar-none,
+    .nav-link-none {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-nav-open {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(40.774227142333984px);
+        min-height: 100vh;
+        width: calc(100% - 40%);
+        margin-left: calc(100% - 60%);
+        position: fixed;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-nav-open p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mobile-nav-open>p>a {
+        margin-top: 50px;
+        cursor: pointer;
+        color: #FFF;
+        font-family: Barlow Condensed;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 2.7px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}

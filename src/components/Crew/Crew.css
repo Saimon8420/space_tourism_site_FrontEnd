@@ -1,0 +1,246 @@
+.crew {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8%;
+    background-image: url("/src/assets/crew/background-crew-desktop.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+#loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 100px auto;
+}
+
+#loading>span {
+    animation: rotating 1.5s infinite ease-in;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.title p {
+    color: #FFF;
+    font-family: Barlow Condensed;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4.725px;
+    text-transform: uppercase;
+    padding-left: 50px;
+}
+
+.crew-info {
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+}
+
+.crew-img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.crew-img img {
+    width: 60%;
+}
+
+.crew-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.crew-select {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.crew-select p {
+    width: 10px;
+    height: 8px;
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px 0px;
+}
+
+.active {
+    opacity: 1;
+}
+
+.not-active {
+    opacity: 0.174363;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    gap: 20px;
+}
+
+.details h1 {
+    color: #FFF;
+    font-family: Bellefair;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.details h2 {
+    color: #FFF;
+    font-family: Bellefair;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.details p {
+    color: #D0D6F9;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: justify;
+}
+
+@media only screen and (max-width:576px) {
+    .crew {
+        padding-top: 15%;
+        background-image: url("/src/assets/crew/background-crew-mobile.jpg");
+    }
+
+    .title {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .title p {
+        text-align: center;
+        padding: 20px 0px;
+    }
+
+    .crew-info {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 10px;
+        padding: 0px;
+    }
+
+    .crew-img {
+        flex-direction: column;
+    }
+
+    #img-divider {
+        height: 1px;
+        width: calc(100% - 40px);
+        background: #383B4B;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .crew-details {
+        align-items: center;
+        gap: 10px
+    }
+
+    .details {
+        align-items: center;
+        margin: 10px 0px;
+    }
+
+    .details h1,
+    h2 {
+        margin: 0px 10px 10px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .details p {
+        margin: 0px 10px;
+        padding-right: 10px;
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width:978px) {
+    .crew {
+        padding-top: 15%;
+        background-image: url("/src/assets/crew/background-crew-tablet.jpg");
+    }
+
+    .title {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .title p {
+        text-align: center;
+        padding: 20px 0px;
+    }
+
+    .crew-info {
+        flex-direction: column-reverse;
+        gap: 20px;
+        margin-bottom: 10px;
+        padding: 0px;
+    }
+
+    .crew-details {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .details {
+        align-items: center;
+    }
+
+    .details p {
+        margin: 0px 10px;
+        padding-right: 10px;
+    }
+}
