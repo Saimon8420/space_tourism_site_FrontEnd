@@ -1,5 +1,4 @@
 .app {
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -78,6 +77,14 @@
     text-decoration: none;
 }
 
+.nav-active>a {
+    border-bottom: 3px solid #FFF;
+}
+
+.nav-inactive>a {
+    border-bottom: none;
+}
+
 .mobile-nav-none {
     display: none;
 }
@@ -128,5 +135,6 @@
         letter-spacing: 2.7px;
         cursor: pointer;
         text-decoration: none;
+        max-width: fit-content;
     }
 }

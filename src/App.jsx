@@ -12,8 +12,6 @@ import NotFound from './components/NotFound/NotFound';
 function App() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const urlPaths = ["/", "/home", "/destination", "/crew", "/technology"];
-  const [activeUrl, setActiveUrl] = useState(location?.pathname);
   return (
     <div className='app'>
       {(location?.pathname === "/" || location?.pathname === "/home" || location?.pathname === "/destination" || location?.pathname === "/crew" || location?.pathname === "/technology") &&
@@ -26,10 +24,13 @@ function App() {
             <div className='v-bar v-bar-none'>
             </div>
             <div className='nav-link nav-link-none'>
-              <p><Link to="/">00 HOME</Link></p>
-              <p><Link to="/destination">01 DESTINATION</Link></p>
-              <p><Link to="/crew">02 CREW</Link></p>
-              <p><Link to="/technology">03 TECHNOLOGY</Link></p>
+              <p className={`${location?.pathname === "/" || location?.pathname === "/home" ? "nav-active" : "nav-inactive"}`}><Link to="/">00 HOME</Link></p>
+
+              <p className={`${location?.pathname === "/destination" ? "nav-active" : "nav-inactive"}`}><Link to="/destination">01 DESTINATION</Link></p>
+
+              <p className={`${location?.pathname === "/crew" ? "nav-active" : "nav-inactive"}`}><Link to="/crew">02 CREW</Link></p>
+
+              <p className={`${location?.pathname === "/technology" ? "nav-active" : "nav-inactive"}`}><Link to="/technology">03 TECHNOLOGY</Link></p>
             </div>
 
             {/* when display size is for only mobile devices */}
@@ -45,10 +46,13 @@ function App() {
           </div>
           {
             open && <div className='mobile-nav-open mobile-nav-close'>
-              <p><Link to="/">00 HOME</Link></p>
-              <p><Link to="/destination">01 DESTINATION</Link></p>
-              <p><Link to="/crew">02 CREW</Link></p>
-              <p><Link to="/technology">03 TECHNOLOGY</Link></p>
+              <p className={`${location?.pathname === "/" || location?.pathname === "/home" ? "nav-active" : "nav-inactive"}`}><Link to="/">00 HOME</Link></p>
+
+              <p className={`${location?.pathname === "/destination" ? "nav-active" : "nav-inactive"}`}><Link to="/destination">01 DESTINATION</Link></p>
+
+              <p className={`${location?.pathname === "/crew" ? "nav-active" : "nav-inactive"}`}><Link to="/crew">02 CREW</Link></p>
+
+              <p className={`${location?.pathname === "/technology" ? "nav-active" : "nav-inactive"}`}><Link to="/technology">03 TECHNOLOGY</Link></p>
             </div>
           }
         </div>

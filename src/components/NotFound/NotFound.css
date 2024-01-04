@@ -26,7 +26,11 @@
 }
 
 .not-found>p>a {
-    color: red;
+    color: white;
+    background-color: rgb(21, 23, 32);
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width:576px) {
