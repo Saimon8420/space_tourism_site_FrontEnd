@@ -14,7 +14,7 @@ const Technology = () => {
 
     useEffect(() => {
         async function fetchData() {
-            await fetch("/public/data/data.json")
+            await fetch("/src/assets/data/data.json")
                 .then(res => res.json())
                 .then(data => { setData(data?.technology); setSelectTech(data?.technology?.map(each => each?.name)) })
         }

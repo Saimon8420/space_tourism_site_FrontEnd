@@ -14,7 +14,7 @@ const Destination = () => {
 
     useEffect(() => {
         async function fetchData() {
-            await fetch("/public/data/data.json")
+            await fetch("/src/assets/data/data.json")
                 .then(res => res.json())
                 .then(data => { setData(data?.destinations); setSelectDest(data?.destinations?.map(each => each?.name)) })
         }
