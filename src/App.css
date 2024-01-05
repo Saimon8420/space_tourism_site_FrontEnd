@@ -75,6 +75,7 @@
     letter-spacing: 2.7px;
     cursor: pointer;
     text-decoration: none;
+    padding-bottom: 5px;
 }
 
 .nav-active>a {
@@ -136,5 +137,6 @@
         cursor: pointer;
         text-decoration: none;
         max-width: fit-content;
+        padding-bottom: 5px;
     }
 }
