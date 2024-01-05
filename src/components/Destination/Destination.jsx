@@ -14,7 +14,7 @@ const Destination = () => {
 
     useEffect(() => {
         async function fetchData() {
-            await fetch("/src/assets/data/data.json")
+            await fetch("/public/data/data.json")
                 .then(res => res.json())
                 .then(data => { setData(data?.destinations); setSelectDest(data?.destinations?.map(each => each?.name)) })
         }
@@ -25,12 +25,16 @@ const Destination = () => {
     }, [])
 
     useEffect(() => {
-        setEach(selectDest[0]);
-        setActiveItem(selectDest[0]);
+        if (selectDest?.length !== 0) {
+            setEach(selectDest[0]);
+            setActiveItem(selectDest[0]);
+        }
     }, [selectDest])
 
     useEffect(() => {
-        setEachData(data.find(e => e?.name?.toUpperCase() === (each?.toUpperCase())))
+        if (each?.length !== 0 && data?.length !== 0) {
+            setEachData(data.find(e => e?.name?.toUpperCase() === (each?.toUpperCase())))
+        }
     }, [each, data])
 
     // for indicate active item

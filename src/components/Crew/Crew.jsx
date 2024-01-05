@@ -14,7 +14,7 @@ const Crew = () => {
 
     useEffect(() => {
         async function fetchData() {
-            await fetch("/src/assets/data/data.json")
+            await fetch("/public/data/data.json")
                 .then(res => res.json())
                 .then(data => { setData(data?.crew); setSelectCrew(data?.crew?.map(each => each?.name)) })
         }
@@ -25,12 +25,16 @@ const Crew = () => {
     }, [])
 
     useEffect(() => {
-        setEach(selectCrew[0]);
-        setActiveItem(selectCrew[0]);
+        if (selectCrew?.length !== 0) {
+            setEach(selectCrew[0]);
+            setActiveItem(selectCrew[0]);
+        }
     }, [selectCrew])
 
     useEffect(() => {
-        setEachData(data.find(e => e?.name?.toUpperCase() === (each?.toUpperCase())))
+        if (each?.length !== 0 && data?.length !== 0) {
+            setEachData(data.find(e => e?.name?.toUpperCase() === (each?.toUpperCase())))
+        }
     }, [each, data])
 
     // for indicate active item

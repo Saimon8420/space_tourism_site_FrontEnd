@@ -14,7 +14,7 @@ const Technology = () => {
 
     useEffect(() => {
         async function fetchData() {
-            await fetch("/src/assets/data/data.json")
+            await fetch("/public/data/data.json")
                 .then(res => res.json())
                 .then(data => { setData(data?.technology); setSelectTech(data?.technology?.map(each => each?.name)) })
         }
@@ -25,12 +25,17 @@ const Technology = () => {
     }, [])
 
     useEffect(() => {
-        setEach(selectTech[0]);
-        setActiveItem(selectTech[0]);
+        if (selectTech?.length !== 0) {
+            setEach(selectTech[0]);
+            setActiveItem(selectTech[0]);
+        }
     }, [selectTech])
 
     useEffect(() => {
-        setEachData(data.find(e => e?.name?.toUpperCase() === (each?.toUpperCase())))
+        if (each?.length !== 0 && data?.length !== 0) {
+            setEachData(data.find(e => e?.name?.toUpperCase() === (each?.toUpperCase())))
+        }
+
     }, [each, data])
 
     // for indicate active item
