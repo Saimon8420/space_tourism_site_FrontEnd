@@ -3,6 +3,12 @@ import './Crew.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { crew } from "../../data/data";
+
+import douglas_hurley from "../../assets/crew/image-douglas-hurley.png";
+import mark_shuttleworth from "../../assets/crew/image-mark-shuttleworth.png";
+import victor_glover from "../../assets/crew/image-victor-glover.png";
+import anousheh_ansari from "../../assets/crew/image-anousheh-ansari.png";
+
 const Crew = () => {
     const [data, setData] = useState([]);
     const [selectCrew, setSelectCrew] = useState([]);
@@ -50,7 +56,18 @@ const Crew = () => {
                 <div className="crew-info">
 
                     <div className="crew-img">
-                        <img src={eachData?.images?.png} alt="" />
+                        {
+                            eachData?.name === "Douglas Hurley" && <img src={douglas_hurley} alt="" />
+                        }
+                        {
+                            eachData?.name === "Mark Shuttleworth" && <img src={mark_shuttleworth} alt="" />
+                        }
+                        {
+                            eachData?.name === "Victor Glover" && <img src={victor_glover} alt="" />
+                        }
+                        {
+                            eachData?.name === "Anousheh Ansari" && <img src={anousheh_ansari} alt="" />
+                        }
                         <p id="img-divider"></p>
                     </div>
 

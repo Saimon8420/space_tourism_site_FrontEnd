@@ -3,6 +3,14 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { technology } from "../../data/data";
+
+import launch_vehicle_landscape from "../../assets/technology/image-launch-vehicle-landscape.jpg";
+import space_capsule_landscape from "../../assets/technology/image-space-capsule-landscape.jpg";
+import spaceport_landscape from "../../assets/technology/image-spaceport-landscape.jpg";
+
+import launch_vehicle_portrait from "../../assets/technology/image-launch-vehicle-portrait.jpg";
+import space_capsule_portrait from "../../assets/technology/image-space-capsule-portrait.jpg";
+import spaceport_portrait from "../../assets/technology/image-spaceport-portrait.jpg";
 const Technology = () => {
     const [data, setData] = useState([]);
     const [selectTech, setSelectTech] = useState([]);
@@ -54,12 +62,28 @@ const Technology = () => {
 
                     <div className="technology-img">
                         {/* only for desktop */}
-                        <img id="desktopImg" src={eachData?.images?.portrait
-                        } alt="" />
+                        {
+                            eachData?.name === "Launch vehicle" && <img className="desktopImg" src={launch_vehicle_portrait} alt="" />
+                        }
+                        {
+                            eachData?.name === "Spaceport" && <img className="desktopImg" src={space_capsule_portrait} alt="" />
+                        }
+
+                        {
+                            eachData?.name === "Space capsule" && <img className="desktopImg" src={spaceport_portrait} alt="" />
+                        }
 
                         {/* for tablet and mobile devices */}
-                        <img id="mob-tabImg" src={eachData?.images?.landscape
-                        } alt="" />
+
+                        {
+                            eachData?.name === "Launch vehicle" && <img className="mob-tabImg" src={launch_vehicle_landscape} alt="" />
+                        }
+                        {
+                            eachData?.name === "Spaceport" && <img className="mob-tabImg" src={space_capsule_landscape} alt="" />
+                        }
+                        {
+                            eachData?.name === "Space capsule" && < img className="mob-tabImg" src={spaceport_landscape} alt="" />
+                        }
                     </div>
 
                     <div className="technology-details">

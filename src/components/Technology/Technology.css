@@ -76,11 +76,11 @@
     width: 90%;
 }
 
-#desktopImg {
+.desktopImg {
     display: block;
 }
 
-#mob-tabImg {
+.mob-tabImg {
     display: none;
 }
 
@@ -203,11 +203,11 @@
         order: 1;
     }
 
-    #desktopImg {
+    .desktopImg {
         display: none;
     }
 
-    #mob-tabImg {
+    .mob-tabImg {
         display: block;
     }
 
@@ -283,11 +283,11 @@
         order: 1;
     }
 
-    #desktopImg {
+    .desktopImg {
         display: none;
     }
 
-    #mob-tabImg {
+    .mob-tabImg {
         display: block;
     }
 

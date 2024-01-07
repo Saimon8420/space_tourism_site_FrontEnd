@@ -3,6 +3,12 @@ import "./Destination.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { destinations } from "../../data/data";
+
+import moon from "../../assets/destination/image-moon.png";
+import mars from "../../assets/destination/image-mars.png";
+import europa from "../../assets/destination/image-europa.png";
+import titan from "../../assets/destination/image-titan.png";
+
 const Destination = () => {
     const [data, setData] = useState([]);
     const [selectDest, setSelectDest] = useState([]);
@@ -41,9 +47,6 @@ const Destination = () => {
         setActiveItem(item);
     };
 
-    // console.log(data);
-    // console.log(selectDest);
-
     return (
         <div className="destination">
             {isLoading ? <p id="loading">Loading... <span><FontAwesomeIcon icon={faSpinner} /></span></p> : <>
@@ -53,7 +56,19 @@ const Destination = () => {
                 <div className="destination-info">
 
                     <div className="destination-img">
-                        <img src={eachData?.images?.png} alt="" />
+                        {
+                            eachData?.name === "Moon" && <img src={moon} alt="" />
+                        }
+                        {
+                            eachData?.name === "Mars" && <img src={mars} alt="" />
+                        }
+                        {
+                            eachData?.name === "Europa" && <img src={europa} alt="" />
+                        }
+                        {
+                            eachData?.name === "Titan" && <img src={titan} alt="" />
+                        }
+
                     </div>
 
                     <div className="dest-details">
