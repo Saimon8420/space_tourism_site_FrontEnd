@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './Crew.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { crew } from "../../data/data";
 const Crew = () => {
     const [data, setData] = useState([]);
     const [selectCrew, setSelectCrew] = useState([]);
@@ -13,12 +14,10 @@ const Crew = () => {
     const [activeItem, setActiveItem] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
-            await fetch("/public/data/data.json")
-                .then(res => res.json())
-                .then(data => { setData(data?.crew); setSelectCrew(data?.crew?.map(each => each?.name)) })
+        if (crew?.length !== 0) {
+            setData(crew);
+            setSelectCrew(crew?.map(each => each?.name))
         }
-        fetchData();
         if (data) {
             setIsLoading(false);
         }
@@ -41,8 +40,6 @@ const Crew = () => {
     const handleItemClick = (item) => {
         setActiveItem(item);
     };
-
-    // console.log(data);
 
     return (
         <div className="crew">

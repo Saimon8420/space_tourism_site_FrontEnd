@@ -2,6 +2,7 @@ import "./Technology.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { technology } from "../../data/data";
 const Technology = () => {
     const [data, setData] = useState([]);
     const [selectTech, setSelectTech] = useState([]);
@@ -13,12 +14,10 @@ const Technology = () => {
     const [activeItem, setActiveItem] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
-            await fetch("/public/data/data.json")
-                .then(res => res.json())
-                .then(data => { setData(data?.technology); setSelectTech(data?.technology?.map(each => each?.name)) })
+        if (technology?.length !== 0) {
+            setData(technology);
+            setSelectTech(technology?.map(each => each?.name))
         }
-        fetchData();
         if (data) {
             setIsLoading(false);
         }
@@ -43,7 +42,6 @@ const Technology = () => {
         setActiveItem(item);
     };
 
-    // console.log(data);
     let count = 0;
 
     return (

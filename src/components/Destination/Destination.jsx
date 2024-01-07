@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Destination.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { destinations } from "../../data/data";
 const Destination = () => {
     const [data, setData] = useState([]);
     const [selectDest, setSelectDest] = useState([]);
@@ -13,12 +14,10 @@ const Destination = () => {
     const [activeItem, setActiveItem] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
-            await fetch("/public/data/data.json")
-                .then(res => res.json())
-                .then(data => { setData(data?.destinations); setSelectDest(data?.destinations?.map(each => each?.name)) })
+        if (destinations?.length !== 0) {
+            setData(destinations);
+            setSelectDest(destinations?.map(each => each?.name))
         }
-        fetchData();
         if (data) {
             setIsLoading(false);
         }
@@ -41,6 +40,9 @@ const Destination = () => {
     const handleItemClick = (item) => {
         setActiveItem(item);
     };
+
+    // console.log(data);
+    // console.log(selectDest);
 
     return (
         <div className="destination">
