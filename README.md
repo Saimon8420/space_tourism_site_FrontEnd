@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github-Link](https://github.com/Saimon8420/space_tourism_site_FrontEnd)
-- Live Site URL: [Crowd-Funding](https://guileless-kashata-7af0c1.netlify.app/)
+- Live Site URL: [Space_Tourism-Site](https://boisterous-lebkuchen-e24f44.netlify.app/)
 
 ## My process
 
